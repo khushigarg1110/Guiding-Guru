@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Guiding Guru</title>
+    <style>
+        html, body {
+            height: 100%; /* Ensure html and body take full height */
+            margin: 0; /* Remove default margin */
+            font-family: 'Arial', sans-serif;
+            background-image: linear-gradient(to bottom right, #d4fcdc, #4ba77e);
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar p {
+            color: white;
+            float: left;
+            font-size: 20px;
+            margin-left: 15px;
+        }
+
+        .navbar a {
+            float: right;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none; /* Remove underline from links */
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .motto {
+            width: 100%;
+            text-align: center; /* Center text inside motto */
+            padding: 40px 20px; /* Added padding for spacing */
+        }
+
+        .text h1 {
+            font-size: 60px;
+            margin-bottom: 10px; /* Reduced bottom margin for better spacing */
+        }
+
+        .text p {
+            font-size: 18px;
+            margin-bottom: 10px; /* Reduced space below paragraph */
+        }
+
+        .search-container {
+            display: inline-flex; /* Align search input and button horizontally */
+        }
+
+        .search-bar {
+            padding: 10px; /* Add padding for better appearance */
+            border-radius: 5px; 
+            border: 1px solid #ccc; 
+            margin-right: 10px; /* Space between input and button */
+        }
+
+        .text button {
+            background-color: black;
+            color: white;
+            height: 40px;
+            padding: 0 20px; 
+            border-radius: 5px;
+            font-size: 16px; 
+            border: none; /* Remove border */
+        }
+
+        .text button:hover {
+            background-color: #4ba77e;
+        }
+
+        .container {
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            height: calc(100% - 60px); /* Adjust height to fill remaining space below navbar */
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-top: -50px; /* Adjusted to move it up above the cards */
+            margin-bottom: 10px; /* Reduced bottom margin for better spacing */
+        }
+
+        .cards {
+           display: flex;
+           justify-content: space-around;
+           flex-wrap: wrap; 
+           width: calc(100% - 40px); /* Full width minus margins */
+           padding-bottom: 20px; /* Padding at the bottom of cards section */
+           margin-top: 10px; /* Space between motto and cards section */
+        }
+
+        .card {
+           background-color: white;
+           border-radius: 8px; 
+           padding: 20px;
+           width: calc(30% - 40px); /* Adjusted width for better spacing on larger screens */
+           margin-bottom: 20px; 
+           transition: all 0.3s ease-in-out; 
+           box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Added shadow for depth */
+           text-align:center; /* Center text inside card */
+        }
+
+        .card h3 {
+           margin-top: 0; /* Remove top margin for card titles */
+           font-size: 20px; /* Adjusted size for card titles */
+        }
+
+        .footer {
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px 0; 
+        }
+
+        hr {
+            border-top: 1px solid #06402B; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <p>Guiding Guru</p>
+        <a href="/about">About Us</a>
+        <a href="/login" class="login-link">Login</a>
+        <a href="/help">Help</a>
+    </div>
+    
+    <hr>
+    
+    <div class="motto">
+        <div class="text">
+            <h1>Find Your Guru, Fuel Your Future</h1>
+            <p>Empowering growth through personalized mentor-mentee connections, fostering meaningful guidance for career success.</p>
+            
+            <div class="search-container">
+                <input type="text" id="mentorSearch" class="search-bar" placeholder="Search for mentors...">
+                <button class="search-button" onclick="searchMentors()">Search</button>
+                <script>
+                    function searchMentors() {
+                        const query = document.getElementById('mentorSearch').value.trim();
+                        if (query) {
+                            window.location.href = `/search?query=${encodeURIComponent(query)}`;
+                        }
+                    }
+                </script>
+            </div>
+            
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        
+        <!-- Moved the section title above the cards -->
+        <h2 class="section-title">Why Choose Us?</h2> 
+        
+        <div class="cards">
+             <!-- Card content remains unchanged -->
+             <div class="card">
+                <h3>Find Your Perfect Mentor</h3>
+                <p>Explore mentors from various professional domains, carefully matched to your specific career aspirations and goals.</p>
+             </div>
+
+             <div class="card">
+                <h3>Integrated Chat System</h3>
+                <p>Facilitates seamless and secure communication between mentors and mentees.</p>
+             </div>
+
+             <div class="card">
+                <h3>Join a Thriving Community</h3>
+                <p>Connect with peers and mentors who can guide you on your career path.</p>
+             </div>
+         </div>
+
+    </div>
+
+    <div class="footer">
+         &copy Guiding Guru. All rights reserved.
+    </div>
+
+</body>
+</html>
